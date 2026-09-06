@@ -1,0 +1,42 @@
+{
+  "name": "gentui-workspace",
+  "private": true,
+  "description": "Safe, deterministic generative terminal UI runtime",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimrod4278/gentui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nimrod4278/gentui/issues"
+  },
+  "homepage": "https://github.com/nimrod4278/gentui#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ci": "vitest run",
+    "test:pty": "vitest run test/pty",
+    "test:release": "vitest run test/release test/agent/host-portability.spec.ts",
+    "test:fuzz": "GENTUI_FUZZ=extended vitest run test/validation/fuzz.spec.ts test/release/extended-robustness.spec.ts",
+    "test:soak": "GENTUI_FUZZ=extended GENTUI_SOAK_MINUTES=30 vitest run test/release/extended-robustness.spec.ts",
+    "test:mutation": "node scripts/targeted-mutation.mjs",
+    "eval:live": "node scripts/live-model-eval.mjs"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.85.0",
+    "@earendil-works/pi-tui": "^0.85.0",
+    "@types/node": "^22.10.0",
+    "typebox": "^1.0.64",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.0"
+  }
+}

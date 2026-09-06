@@ -1,0 +1,10 @@
+{
+  "version": "1",
+  "id": "release-v1",
+  "title": "Compatibility fixture",
+  "root": {
+    "id": "message",
+    "type": "text",
+    "props": { "content": "Protocol v1 remains readable" }
+  }
+}

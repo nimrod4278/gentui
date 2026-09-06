@@ -1,0 +1,62 @@
+{
+  "name": "gentui-adapter-pi",
+  "version": "0.1.0",
+  "description": "Pi host adapter for safe generative terminal interfaces",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "gentui",
+    "terminal",
+    "tui",
+    "agent"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimrod4278/gentui.git",
+    "directory": "packages/adapter-pi"
+  },
+  "bugs": {
+    "url": "https://github.com/nimrod4278/gentui/issues"
+  },
+  "homepage": "https://github.com/nimrod4278/gentui/tree/main/packages/adapter-pi#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "pi": {
+    "extensions": [
+      "./dist/index.js"
+    ],
+    "skills": [
+      "./skills"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "gentui": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  }
+}

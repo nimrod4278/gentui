@@ -1,0 +1,47 @@
+{
+  "name": "gentui-testing",
+  "version": "0.1.0",
+  "description": "Deterministic test helpers for gentui hosts and renderers",
+  "keywords": [
+    "gentui",
+    "terminal",
+    "tui",
+    "testing",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimrod4278/gentui.git",
+    "directory": "packages/testing"
+  },
+  "bugs": {
+    "url": "https://github.com/nimrod4278/gentui/issues"
+  },
+  "homepage": "https://github.com/nimrod4278/gentui/tree/main/packages/testing#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "gentui": "^0.1.0"
+  }
+}

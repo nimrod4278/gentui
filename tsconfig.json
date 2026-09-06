@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/gentui" },
+    { "path": "./packages/testing" },
+    { "path": "./packages/adapter-pi" }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "gentui",
+  "version": "0.1.0",
+  "description": "Safe, deterministic runtime for generative terminal interfaces",
+  "keywords": [
+    "terminal",
+    "tui",
+    "generative-ui",
+    "agent",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimrod4278/gentui.git",
+    "directory": "packages/gentui"
+  },
+  "bugs": {
+    "url": "https://github.com/nimrod4278/gentui/issues"
+  },
+  "homepage": "https://github.com/nimrod4278/gentui#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  }
+}
